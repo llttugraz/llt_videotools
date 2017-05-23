@@ -1,0 +1,24 @@
+# auphonic.com credentials (e.g.: myusername:'mypassword') NOTE: put password in simple quote-marks -> '
+auphonic_credentials:username:'password'
+
+# auphonic.com standard quality preset UUID
+auphonic_preset_sq:
+
+# auphonic.com high quality preset UUID
+auphonic_preset_hq:
+
+# the crop-settings for extracting two separate videos out of one canvas
+# screen crop-setting (ffmpeg)
+screen_crop:crop=1280:800:0:0
+
+# camera crop-setting (ffmpeg)
+camera_crop:crop=640:360:1280:0
+
+# output video container type ('mov' or 'mp4')
+output_container:mov
+
+# pixel format (ffmpeg) (e.g.: 'yuv420p' or 'yuvj420p')
+pixel_format:yuvj420p
+
+# path to the spectrum background image (for -vmode 'audio')
+spectrumBG_file:./resources/mybackground.png
