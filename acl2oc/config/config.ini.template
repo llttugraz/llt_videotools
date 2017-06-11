@@ -1,0 +1,6 @@
+# Opencast Server URL (e.g.: https://opencast.myuni.edu)
+host:https://opencast.myuni.edu
+
+# Opencast Digest User credentials (check "../etc/custom.properties" in your OC installation)
+user:******
+pass:******
