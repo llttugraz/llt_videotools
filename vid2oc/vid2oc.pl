@@ -20,7 +20,7 @@ use warnings;
 # [3] https://auphonic.com/help/web/index.html
 #
 #
-# vid2oc (v.1.0.3)
+# vid2oc (v.1.0.4)
 # Copyright 2012-2017 Graz University of Technology – "Educational Technology" https://elearning.tugraz.at
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -347,7 +347,7 @@ use warnings;
 
 		while ($aupho_wait_ii < 360) {
 			print "checking file on auphonic.com...\n";
-			my $curl_chksz = "curl -sI $auph_dl_url -u $auph_cred \| grep Content-Length \| awk \'\{print \$2\}\'";
+			my $curl_chksz = "curl -sI $auph_dl_url -u $auph_cred \| awk \'\/content-length\/ \{print \$2\}\'";
 			if (my $auph_size = `$curl_chksz`) {
 				if ($auph_size > $auph_presize) {
 					print "current file size: $auph_size\n";

@@ -1,7 +1,7 @@
-#vid2oc (1.0.3)
+#vid2oc (1.0.4)
 
 ##Licence
-**vid2oc (1.0.3)**  
+**vid2oc (1.0.4)**  
 Copyright 2012-2017 Graz University of Technology – "Educational Technology" https://elearning.tugraz.at  
 
 This program is free software: you can redistribute it and/or modify
@@ -33,6 +33,9 @@ Developed and tested on UNIX systems.
 **Auphonic** is an automatic audio post production web service. In order to be used with **vid2oc**, an account must be set on auphonic.com. Credentials and production preset UUIDs are required. The production preset(s) on auphonic.com must be set to produce one ".m4a" audio file output. For more information on how to create a custom preset, see Auphonic's [documentation](https://auphonic.com/help/web/index.html).  
 **Privacy note:** Care has been taken to ensure that files sent to Auphonic contain no sensitive information in the file name (e.g.: a lecturer's name). However, please note that metadata are copied from the source file to the file sent to Auphonic. These may potentially contain sensitive information (e.g: a recording device's serial number).
 
+##What's New
+####v. 1.0.4
+– adaptation after auphonic.com API change (check file size function; optimised command by omitting "grep" and using only "awk")
 ##Usage
 	~ perl vid2oc.pl -i <input-file> [-o <output-base-name> -f <output-file-format> -vmode <video-mode> -vfscr <custom-screen-video-filters> -vfcam <custom-camera-video-filters> -vf <custom-single-video-filters> -pix_fmt <custom-pixel-format> -nopho -ss <start-time> -to <end-time> -au <auphonic-credentials> -ap <auphonic-preset-uuid> -aq <auphonic-quality>]
 
@@ -51,7 +54,7 @@ The output file container type. Possible values are as follows:
 
 
 * **-vmode _mode_**  
-The processing mode. There are five variants:
+The processing mode. There are several variants:
 	* **0, 'copy'** passes the input video to the output as a single stream; no encoding (copy stream) (default option)
 	* **1, 'single'** passes the input video to the output as a single stream
 	* **2, 'double'** crops input video in two separate videos (screen/camera)
